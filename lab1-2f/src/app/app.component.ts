@@ -10,6 +10,7 @@ import { Service1Service } from './services/service1.service';
 export class AppComponent {
   title = 'lab1-2f';
   entityList:Entity[]=[];
+  tpEntity:Entity={title: "", age: 20, width: 3.3};
   constructor(private service:Service1Service){}
   getEntities():void{
     this.service.getEntities().subscribe(
@@ -18,4 +19,7 @@ export class AppComponent {
       }
       )
   }
+  putEntity(): void {
+    this.service.putEntity(this.tpEntity).subscribe();
+    }
 }

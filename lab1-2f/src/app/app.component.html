@@ -6,3 +6,12 @@
 Title: {{ent.title}}, age: {{ent.age}}, width: {{ent.width}}
 </li>
 </ul>
+<form #form1="ngForm" (ngSubmit)="putEntity()">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" [(ngModel)]="tpEntity.title"><br>
+    <label for="age">Age:</label>
+    <input type="text" id="age" name="age" [(ngModel)]="tpEntity.age"><br>
+    <label for="width">Width:</label>
+    <input type="text" id="width" name="width" [(ngModel)]="tpEntity.width"><br>
+    <button (click)="putEntity()">Submit</button>
+</form>

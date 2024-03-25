@@ -12,4 +12,7 @@ export class Service1Service {
   getEntities():Observable<Entity[]>{
     return this.http.get<Entity[]>(this.url);
   }
+  putEntity(entity: Entity): Observable<Entity> {
+    return this.http.put<Entity>(this.url + "?title=" + entity.title + "&age=" + entity.age + "&width=" + entity.width, entity);
+  };
 }
